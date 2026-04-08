@@ -1,7 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const authRoutes = require("./routes/authentication");
 const cors = require("cors");
+app.use("/api", authRoutes);
 const app = express(); // Middleware 
 app.use(cors()); // Permitir solicitudes CORS 
 app.use(express.json()); // Permitir recibir datos JSON en el cuerpo de la solicitud 
